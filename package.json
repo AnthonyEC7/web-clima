@@ -13,7 +13,16 @@
   "dependencies": {
     "axios": "^0.19.0",
     "express": "^4.17.1",
-    "hbs": "^4.0.6"
+    "hbs": "^4.0.6",
+    "request": "^2.88.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonyEC7/web-clima.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AnthonyEC7/web-clima/issues"
+  },
+  "homepage": "https://github.com/AnthonyEC7/web-clima#readme"
 }

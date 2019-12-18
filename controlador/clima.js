@@ -1,10 +1,12 @@
 const axios = require('axios');
 
-const getClima = async(lat, lon) => {
-    const resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=ac7eaef281e24b3e15ae43d9c6ee567d&units=metric`);
-    return resp.data.main.temp;
+const getClima = async(ciudad, apiweather) => {
+    const resp = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiweather}`);
+    const val = float(resp.data.main.temp) - 273.15
+    return val;
 }
 
+//48eba3191a02169b9613f3adacc277cc
 module.exports = {
     getClima
 }

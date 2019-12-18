@@ -7,7 +7,6 @@ const argv = require('yargs').options({
     nombre: {
         alias: 'n',
         desc: 'Nombre de la ciudad para obtener el clima',
-        demand: true
     }
 }).argv;
 
@@ -19,9 +18,8 @@ const argv = require('yargs').options({
 
 const getInfo = async(ciudad) => {
     try {
-        const coords = await ubicacion.getCiudadLatLon(ciudad);
-        const temp = await clima.getClima(coords.lat, coords.lng);
-        return `El clima de ${ coords.direccion } es de ${ temp }.`;
+        const temp = await clima.getClima(ciudad, "48eba3191a02169b9613f3adacc277cc");
+        return `El clima de ${ ciudad } es de ${ temp }.`;
     } catch (e) {
         return `No se pudo determinar el clima de ${ ciudad }`;
     }
@@ -30,3 +28,7 @@ const getInfo = async(ciudad) => {
 getInfo(argv.nombre)
     .then(console.log)
     .catch(console.log);
+
+module.exports = {
+    getInfo
+}
